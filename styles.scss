@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Spartan:500,700&display=swap');
 
 // Colors:
 $primary: hsl(180, 29%, 50%);
@@ -20,10 +20,116 @@ $weight2: 700;
 html { 
     font-size: 15px;
     font-family: 'Spartan', sans-serif;
+    background: $lightGrayishCyan;
+}
+// Helper Classes
+.background {
+    height: 156px;
+    width: 100%;
+    background: $primary;
+    background-image: url("./images/bg-header-desktop.svg");
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 75px;
+}
+.filter-btn {}
+.badge {
+    border-radius: 20px;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: $weight2;
+    font-size: 15px;
+}
+.badge.featured {
+    background: $veryDarkCyan;
+}
+.badge.new {
+    background: $primary;
+}
+// Main Code
+.content {
+    width: 100%;
+    .job-profile-listing {
+        width: 75%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        border-radius: 5px;
+        height: 150px;
+        box-shadow: 0px 15px 20px -10px rgba($darkCyan, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 50px;
+        background: white;
+        &--column-1 {
+            justify-self: flex-start;
+            display: flex;
+            align-items: center;
+            .profile-image {
+                margin-right: 20px;
+            }
+            .profile-details {
+                .badge-container {
+                    color: $primary;
+                    font-weight: $weight2;
+                }
+                .title {
+                    margin: 10px 0px;
+                }
+                p {
+                    color: $darkCyan;
+                    span:first-child {
+                        margin-right: 10px;
+                    }
+                    span:not(:first-child) {
+                        margin: 0 10px;
+                    }
+                }
+            
+            }
+
+        }
+        &--column-2 {
+            justify-self: flex-end;
+            .tags {
+                .tag {
+                    margin-right: 10px;
+                    border-radius: 5px;
+                    font-size: 15px;
+                    color: $primary;
+                    background: $lightGrayishCyan;
+                    padding: 5px 15px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    transition: .2s all ease-in-out;
+                    cursor: pointer;
+                    &:hover {
+                        color: $lightGrayishCyan;
+                        background: $primary;
+                    }
+                }
+                .tag.selected {
+                    color: $lightGrayishCyan;
+                    background: $primary;
+                }
+            }
+        }
+        &.new-featured {
+            border-left: 3px solid $primary;
+        }
+    }
 }
 // Screen sizes..
-@media (min-width: 0px) and (max-width: 375px) {
-    html {
-        background: red;
+@media (max-width: 375px) {
+    .background {
+        background-image: url("./images/bg-header-mobile.svg");
     }
+}
+// Remove later..
+.attribution {
+    display: none;
 }
