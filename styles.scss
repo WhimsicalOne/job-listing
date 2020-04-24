@@ -31,17 +31,49 @@ html {
     background-position: center;
     background-size: cover;
     margin-bottom: 75px;
+    position: relative;
+    #filter-container {
+        position: absolute;
+        bottom: -30%;
+        width: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        padding: 20px;
+        border-radius: 5px;
+        background: white;
+        transform-origin: top;
+        opacity: 1;
+        transition: .3s all ease-in-out;
+        display: flex;
+        align-items: center;
+        &.hidden {
+            opacity: 0;
+            transform: translate(-50%, -1000%);
+        }
+    }
 }
-.filter-btn {}
+.filter-btn {
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: $primary;
+    background: $lightGrayishCyan;
+    height: 25px;
+    width: 125px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    &.active {}
+}
 .badge {
     border-radius: 20px;
     background: black;
     color: white;
     padding: 5px 10px;
-    margin-left: 10px;
+    // margin-left: 10px;
     text-transform: uppercase;
     font-weight: $weight2;
-    font-size: 15px;
+    font-size: 11px;
 }
 .badge.featured {
     background: $veryDarkCyan;
@@ -75,11 +107,18 @@ html {
                 .badge-container {
                     color: $primary;
                     font-weight: $weight2;
+                    span {
+                        position: relative;
+                        top: -5px;
+                    }
+                    span:first-child {
+                        margin: 0px 5px;
+                    }
                 }
                 .title {
                     margin: 10px 0px;
                 }
-                p {
+                .other-details {
                     color: $darkCyan;
                     span:first-child {
                         margin-right: 10px;
@@ -118,7 +157,7 @@ html {
                 }
             }
         }
-        &.new-featured {
+        &.featured-new {
             border-left: 3px solid $primary;
         }
     }

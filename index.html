@@ -5,37 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 	<title>Frontend Mentor | Job Listings</title>
+	<!-- <link rel="stylesheet" href="fa.css"> -->
 	<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 	<div class="background">
-
-	</div>
-	<div class="content">
-		<div class="job-profile-listing new-featured">
-			<div class="job-profile-listing--column-1">
-				<div class="profile-image">
-					<img src="./images/eyecam-co.svg" alt="#">
-				</div>
-				<div class="profile-details">
-					<p class="badge-container featured new">Company Name</p>
-					<h3 class="title">Title</h3>
-					<p>
-						<span>1d ago</span>•<span>Full Time</span>•<span>USA only</span>
-					</p>
-				</div>
-			</div>
-			<div class="job-profile-listing--column-2">
-				<div class="tags">
-					<span class="tag">Frontend</span>
-					<span class="tag">Senior</span>
-					<span class="tag">HTML</span>
-					<span class="tag">CSS</span>
-					<span class="tag">JavaScript</span>
-				</div>
-			</div>
+		<div id="filter-container" class="hidden">
+			<span class="filter-btn active">Frontend <i class="fas fa-times"></i> </span>
 		</div>
 	</div>
+	<div class="content" id="job-list"></div>
   	<div class="attribution">
     	Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     	Coded by <a href="https://github.com/WhimsicalOne">WhimsicalOne</a>.
